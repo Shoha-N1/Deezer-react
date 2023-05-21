@@ -7,12 +7,6 @@ export default function Card({img, name, id}) {
         <h3>{name}</h3>
     </div>
   )
-
-  async function fetchArtists() {
-    const res = await fetch("https://api.deezer.com/chart");
-    const data = await res.json();
-  }
-
 }
 
 
