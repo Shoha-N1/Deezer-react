@@ -29,19 +29,20 @@ header {
   }
   
   header nav ul li a {
-    color: #e4e4e4;
+    color: #b3b3b3;
     letter-spacing: 1px;
     transition: 0.1s;
+    text-decoration: none;
   }
   
   .navlink {
-    text-decoration: none;
+    color: #b3b3b3;
 
     &.active {
-        text-decoration: underline;
+      color: #fff;
     }
 
     &.pending {
-        text-decoration: dashed;
+      color: #666666;
     }
 }
