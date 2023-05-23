@@ -11,13 +11,13 @@ export default function Home() {
       <div className="big-box">
         <h2>Artist</h2>
         <ul>
-          {data.artists.map(artist => {
+          {data.artists.map(artist => (
             <li key={artist.id}>
               <h2>{artist.name}</h2>
               <img src={artist.picture_small} alt={artist.name} />
               <Link to={`/${artist.id}`}>Listen artist</Link>
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       </div>
 
