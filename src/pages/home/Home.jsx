@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 export default function Home() {
-  const [posts, setPosts] = useState();
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  async function fetchPosts() {
-    const res = await fetch("https://dummyjson.com/posts");
-    const data = await res.json();
-
-    if (data?.posts?.length) {
-      setPosts(data.posts);
-    }
-  }
+  const {data} = useFetch("https://deezer.humosoft.uz/artist")
 
   return (
     <div>
       <div className="big-box">
-        <h2>posts</h2>
-
+        <h2>Artist</h2>
         <ul>
-          {posts.map((post) => (
-            <li key={post.id}>
-              <Link to={`/posts/${post.id}`}>{post.title}</Link>
-
-              <div>{post.body}</div>
+          {data.map(artist => (
+            <li key={artist.id}>
+              <Link to={`/${artist.id}`}>{artist.name}</Link>
+              <img src={artist.picture_small} alt={artist.name} />
             </li>
           ))}
         </ul>
