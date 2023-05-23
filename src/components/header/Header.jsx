@@ -12,7 +12,7 @@ export default function Header() {
                 </a>
             </h1>
             
-            <nav>
+            {/* <nav>
               <ul>
               <li>
                   <NavLink to={`/`}>Home</NavLink>
@@ -30,7 +30,7 @@ export default function Header() {
                   <NavLink to={`/track`}>Tracks</NavLink>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
         </header>
     </div>
   )
