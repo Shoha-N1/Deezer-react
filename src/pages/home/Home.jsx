@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import ArtistPage from "../artist_page/ArtistPage";
 
 export default function Home() {
   const { data } = useFetch("https://deezer.humosoft.uz/chart");
@@ -12,7 +11,7 @@ export default function Home() {
       <div className="big-box">
         <h2>Artist</h2>
         <ul>
-          {data.map(artist => {
+          {data.artists.map(artist => {
             <li key={artist.id}>
               <h2>{artist.name}</h2>
               <img src={artist.picture_small} alt={artist.name} />
